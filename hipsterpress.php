@@ -16,14 +16,14 @@
 //don't allow calling of this directly
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-add_action( 'plugins_loaded', array( 'hipsterpress', 'get_instance' ) );
+//add_action( 'plugins_loaded', array( 'hipsterpress', 'instance' ) );
 
 class hipsterpress {
 
 	protected static $instance = null;
 
 	private function __construct() {
-	
+		add_action( 'wp_enqueue_scripts', 'check_objc_swift' );
 	}
 
 	public static function activate() {
@@ -34,7 +34,7 @@ class hipsterpress {
 
 	}
 
-	private function check_objc_swift {
+	private function check_objc_swift() {
 		//need these globals to check whether we need to load
 		global $post, $wp_query;
 		//string to hold display contents
@@ -52,7 +52,16 @@ class hipsterpress {
 				$contents_to_display .= get_post_field( 'post_content', $single_id ); 
 				}
 			}
+		//right, now we've got the content to be displayed, we need to 
+		// check if we've got both objective-c and swift
+		// todo: put the matching class names in settings so we can change them
+		$contains_objc = strpos($contents_to_display, 'language-objc');
+		$contains_swift = strpos($contents_to_display, 'languge-swift');
+		if($contains_objc && $contains_swift) {
+			wp_enqueue_script('hipsterpress','hipsterpress.js');
+		}
 		
 	}
+}	
 
 ?>
