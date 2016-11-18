@@ -34,7 +34,24 @@ class hipsterpress {
 
 	}
 
-	function check_objc_swift {
+	private function check_objc_swift {
+		//need these globals to check whether we need to load
+		global $post, $wp_query;
+		//string to hold display contents
+		$contents_to_display = '';
+		//are we on a single post/page?
+		if( is_singular() ) {
+				$contents_to_display = $post->post_content;
+			}
+		//else we're displaying more than one post
+		else {
+			//get the ids we're displaying
+			$ids_being_displayed = wp_list_pluck( $wp_query->posts, 'ID');
+			//get the content of all these ids
+			foreach( $ids_being_displayed as $single_id) {
+				$contents_to_display .= get_post_field( 'post_content', $single_id ); 
+				}
+			}
 		
 	}
 
