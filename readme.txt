@@ -17,6 +17,20 @@ This is a plugin which attempts to mimic the behaviour of NSHipster by including
 == Installation ==
 
 Download the zip file and add a new plugin in WordPress
+Objective-C and Swift code must directly follow each other, and they must each wrapped in <pre><code> tags.
+You must use the classes <code class="language-objc"> and <code class="language-swift">
+Example:
+<pre>
+<code class="language-swift">
+print("Hello, World!")
+</code>
+</pre>
+<pre>
+<code class="language-objc">
+NSLog(@"Hello, World!");
+</code>
+</pre>
+
 
 == Frequently Asked Questions ==
 
