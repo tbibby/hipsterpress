@@ -8,7 +8,6 @@ function hipsterProcess() {
 	var objcIsFirst = true;
 	//this could be null, if swift is first
 	var firstObjcSibling = objcblocks[0].parentNode.nextElementSibling;
-	console.log("here's sibling",firstObjcSibling,"and",firstObjcSibling.firstChild);
 	//think conditional expressions evaluate left to right in javascript but this feels super hacky
 	if(firstObjcSibling && firstObjcSibling.firstChild.tagName == 'pre' && firstObjcSibling.firstChild.classList.contains("language-swift")) {
 		//this isn't needed because we set it to true above
@@ -63,18 +62,53 @@ function hipsterProcess() {
         var objclinks = document.getElementsByClassName("objclink");
         for(var i = 0; i < swiftlinks.length; i++) {
                 swiftlinks[i].onclick = hideAllObjc;
-                console.log('setting for element',swiftlinks[i]);
                 }
         for(var j = 0; j < objclinks.length; j++) {
                 objclinks[j].onclick = hideAllSwift;
                 }
 	}
 
-
-function hideAllSwift() {
-	console.log('hide all swift called');	
-	}
-
 function hideAllObjc() {
-	console.log('hide all objective c called');
-	}
+        //hide all objc divs
+        var allObjcDivs = document.getElementsByClassName("objcblock");
+        var allSwiftDivs = document.getElementsByClassName("swiftblock");
+        for(var i = 0;i<allObjcDivs.length;i++) {
+                allObjcDivs[i].style.display = "none";
+                }
+        for(var i = 0;i<allSwiftDivs.length;i++) {
+                        allSwiftDivs[i].style.display = "block";
+                }
+        //set all swift links to active class, and remove from objc
+         var swiftlinks = document.getElementsByClassName("swiftlink");
+        var objclinks = document.getElementsByClassName("objclink");
+        for(var i = 0; i < swiftlinks.length; i++) {
+                swiftlinks[i].classList.add('active');
+                }
+        for(var j = 0; j < objclinks.length; j++) {
+                objclinks[j].classList.remove('active');
+                }
+
+         }
+function hideAllSwift() {
+        //hide all objc divs
+        var allObjcDivs = document.getElementsByClassName("objcblock");
+        var allSwiftDivs = document.getElementsByClassName("swiftblock");
+        for(var i = 0;i<allObjcDivs.length;i++) {
+                allObjcDivs[i].style.display = "block";
+                }
+        for(var i = 0;i<allSwiftDivs.length;i++) {
+                        allSwiftDivs[i].style.display = "none";
+                }
+        //set all objc links to active, and remove from swift
+         var swiftlinks = document.getElementsByClassName("swiftlink");
+        var objclinks = document.getElementsByClassName("objclink");
+        for(var i = 0; i < swiftlinks.length; i++) {
+                swiftlinks[i].classList.remove('active');
+                }
+        for(var j = 0; j < objclinks.length; j++) {
+                objclinks[j].classList.add('active');
+                }
+
+
+        }
+
