@@ -1,7 +1,6 @@
 # hipsterpress
 A WordPress plugin to easily switch between Objective-C and Swift code, inspired by [NSHipster.com](http://nshipster.com).
 To install, download this repository as a zip and upload to your WordPress installation.
-Detailed instructions contained in the WordPress plugin readme below
 ## Licence
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -31,7 +30,7 @@ NSLog(@"Hello, World!");
 
 ## Frequently Asked Questions 
 
-= Does it matter if I include Objective-C or Swift first? =
+### Does it matter if I include Objective-C or Swift first?
 No - either order is fine, as long as you are consistent. 
 
 ## Changelog 
@@ -44,4 +43,4 @@ No upgrades yet
 
 ## Screenshots 
 ![plugin screenshot](screenshot-1.gif)
-1. Swapping between Objective-C and Swift
+
