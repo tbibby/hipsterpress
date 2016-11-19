@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded",hipsterProcess);
 
 function hipsterProcess() {
 	//get all the nodes that have objective-c
-	var objcblocks = document.getElementsByClassName("language-objc");
+	var objcblocks = document.getElementsByClassName("language-objectivec");
 	//check if the author is putting objective-c first or swift
 	var objcIsFirst = true;
 	//this could be null, if swift is first

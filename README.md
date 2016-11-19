@@ -13,7 +13,7 @@ This is a plugin which attempts to mimic the behaviour of NSHipster by including
 
 Download the zip file and add a new plugin in WordPress
 Objective-C and Swift code must directly follow each other, and they must each wrapped in `<pre><code>` tags.
-You must use the classes `<code class="language-objc">` and `<code class="language-swift">`
+You must use the classes `<code class="language-objectivec">` and `<code class="language-swift">`
 Example:
 ```
 <pre>
@@ -22,7 +22,7 @@ print("Hello, World!")
 </code>
 </pre>
 <pre>
-<code class="language-objc">
+<code class="language-objectivec">
 NSLog(@"Hello, World!");
 </code>
 </pre>

@@ -57,7 +57,7 @@ class hipsterpress {
 		//right, now we've got the content to be displayed, we need to 
 		// check if we've got both objective-c and swift
 		// todo: put the matching class names in settings so we can change them
-		$contains_objc = strpos($contents_to_display, 'language-objc');
+		$contains_objc = strpos($contents_to_display, 'language-objectivec');
 		$contains_swift = strpos($contents_to_display, 'language-swift');
 		if($contains_objc && $contains_swift) {
 			wp_enqueue_script('hipsterpress-js');
