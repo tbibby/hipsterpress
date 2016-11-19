@@ -23,6 +23,8 @@ class hipsterpress {
 	public function __construct() {
 		//register our script first
 		wp_register_script('hipsterpress-js',plugins_url( 'hipsterpress.js', __FILE__ ));
+		//register css
+		wp_register_style('hipsterpress-css',plugins_url( 'hipsterpress.css', __FILE__ ));
 		add_action( 'wp_enqueue_scripts', array($this, 'check_objc_swift') );
 	}
 
@@ -59,6 +61,7 @@ class hipsterpress {
 		$contains_swift = strpos($contents_to_display, 'language-swift');
 		if($contains_objc && $contains_swift) {
 			wp_enqueue_script('hipsterpress-js');
+			wp_enqueue_style('hipsterpress-css');
 		}
 		
 	}

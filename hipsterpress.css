@@ -1,0 +1,16 @@
+div.objcswiftblock {
+        text-align: right;
+}
+div.objcswiftblock div.swiftblock,div.objcswiftblock div.objcblock {
+        text-align: left;
+}
+div.objcswiftblock span a{
+        margin-left: 1em;
+}
+div.objcswiftblock span a {
+        color: #aaa;
+        cursor: pointer;
+}
+div.objcswiftblock span a.active {
+        color: inherit;
+}
