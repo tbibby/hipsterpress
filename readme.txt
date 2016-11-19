@@ -1,5 +1,6 @@
 === hipsterpress ===
 Contributors: tbibby
+Donate link: http://thomas.bibby.ie
 Tags: wordpress, plugin, template
 Requires at least: 3.9
 Tested up to: 4.0
