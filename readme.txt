@@ -47,4 +47,4 @@ No upgrades yet
 
 == Screenshots ==
 
-To come.
+1. Swapping between Objective-C and Swift
